@@ -182,7 +182,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-02-08 13:48:37 / 修改时间：14:07:37" itemprop="dateCreated datePublished" datetime="2023-02-08T13:48:37+08:00">2023-02-08</time>
+              <time title="创建时间：2023-02-08 13:48:37 / 修改时间：14:13:27" itemprop="dateCreated datePublished" datetime="2023-02-08T13:48:37+08:00">2023-02-08</time>
             </span>
 
           
@@ -220,29 +220,16 @@
 <li><p>根据得到的路径设置URL</p>
 <ol>
 <li><p>不带后缀的，即上述第一种情况的，其config结果如下</p>
-<blockquote>
-<p><em># URL</em></p>
-<p><em>## Set your site url here. For example, if you use GitHub Page, set url as ‘<a target="_blank" rel="noopener" href="https://username.github.io/project">https://username.github.io/project</a>‘</em></p>
-<p>url: <a href="https://peach99cpp.github.io/">https://peach99cpp.github.io</a></p>
-<p>permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;</p>
-</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*# URL*</span><br><span class="line"></span><br><span class="line">*## Set your site url here. For example, if you use GitHub   Page, set url as &#x27;https://username.github.io/project&#x27;*</span><br><span class="line"></span><br><span class="line">url: https://peach99cpp.github.io</span><br><span class="line"></span><br><span class="line">permalink: :year/:month/:day/:title/</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>若为带后缀的，即上述第二种情况的，其config结果如下</p>
 </li>
 </ol>
-<blockquote>
-<p><em># URL</em></p>
-<p><em>## Set your site url here. For example, if you use GitHub Page, set url as ‘<a target="_blank" rel="noopener" href="https://username.github.io/project">https://username.github.io/project</a>‘</em></p>
-</blockquote>
-<pre><code> &gt; url: https://peach99cpp.github.io/
- &gt;
- &gt; root: /peach99cpp.github.io
- &gt;
- &gt; permalink: :year/:month/:day/:title/
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  *# URL*</span><br><span class="line">  </span><br><span class="line"> *## Set your site url here. For example, if you use GitHub   Page, set url as &#x27;https://username.github.io/project&#x27;*</span><br><span class="line"></span><br><span class="line">url: https://peach99cpp.github.io</span><br><span class="line">root: /peach99cpp.github.io</span><br><span class="line"></span><br><span class="line">permalink: :year/:month/:day/:title/</span><br></pre></td></tr></table></figure>
+<pre><code>3. 设置完成 进行上传
+            
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo c &amp;hexo g &amp;hexo d</span><br></pre></td></tr></table></figure>
 </code></pre>
-<ol start="3">
-<li>设置完成 进行上传<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo c &amp;hexo g &amp;hexo d</span><br></pre></td></tr></table></figure></li>
-</ol>
 </li>
 </ul>
 </li>
