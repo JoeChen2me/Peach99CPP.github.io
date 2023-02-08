@@ -6,7 +6,7 @@
   <link href="https://github.com/Peach99CPP/Peach99CPP.github.io.git/atom.xml" rel="self"/>
   
   <link href="https://github.com/Peach99CPP/Peach99CPP.github.io.git/"/>
-  <updated>2023-02-08T02:11:39.563Z</updated>
+  <updated>2023-02-08T02:17:11.148Z</updated>
   <id>https://github.com/Peach99CPP/Peach99CPP.github.io.git/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://github.com/Peach99CPP/Peach99CPP.github.io.git/2023/01/14/my-learning-post/"/>
     <id>https://github.com/Peach99CPP/Peach99CPP.github.io.git/2023/01/14/my-learning-post/</id>
     <published>2023-01-14T07:32:58.204Z</published>
-    <updated>2023-02-08T02:11:39.563Z</updated>
+    <updated>2023-02-08T02:17:11.148Z</updated>
     
     
       
@@ -36,6 +36,10 @@
     
     <category term="上位机学习" scheme="https://github.com/Peach99CPP/Peach99CPP.github.io.git/categories/%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%AD%A6%E4%B9%A0/"/>
     
+    
+    <category term="Testing" scheme="https://github.com/Peach99CPP/Peach99CPP.github.io.git/tags/Testing/"/>
+    
+    <category term="Another Tag" scheme="https://github.com/Peach99CPP/Peach99CPP.github.io.git/tags/Another-Tag/"/>
     
   </entry>
   
