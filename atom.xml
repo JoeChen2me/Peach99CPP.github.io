@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>桃子的笔记</title>
+  
+  <subtitle>还没想好副标题</subtitle>
+  <link href="https://github.com/Peach99CPP/Peach99CPP.github.io.git/atom.xml" rel="self"/>
+  
+  <link href="https://github.com/Peach99CPP/Peach99CPP.github.io.git/"/>
+  <updated>2023-02-08T02:11:39.563Z</updated>
+  <id>https://github.com/Peach99CPP/Peach99CPP.github.io.git/</id>
+  
+  <author>
+    <name>Jiujiu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LearningNote PyQt</title>
+    <link href="https://github.com/Peach99CPP/Peach99CPP.github.io.git/2023/01/14/my-learning-post/"/>
+    <id>https://github.com/Peach99CPP/Peach99CPP.github.io.git/2023/01/14/my-learning-post/</id>
+    <published>2023-01-14T07:32:58.204Z</published>
+    <updated>2023-02-08T02:11:39.563Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;PyQt学习记录&quot;&gt;&lt;a href=&quot;#PyQt学习记录&quot; class=&quot;headerlink&quot; title=&quot;PyQt学习记录&quot;&gt;&lt;/a&gt;PyQt学习记录&lt;/h1&gt;&lt;h2 id=&quot;目标：制作一个上位机来搭配我的ESP32蓝牙设备&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="上位机学习" scheme="https://github.com/Peach99CPP/Peach99CPP.github.io.git/categories/%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://github.com/Peach99CPP/Peach99CPP.github.io.git/2023/01/14/hello-world/"/>
+    <id>https://github.com/Peach99CPP/Peach99CPP.github.io.git/2023/01/14/hello-world/</id>
+    <published>2023-01-14T05:10:26.568Z</published>
+    <updated>2023-02-08T02:12:41.789Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&amp;quot;My New Post&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Try  to edit the  context of  this &lt;strong&gt;blogpage&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+</feed>
