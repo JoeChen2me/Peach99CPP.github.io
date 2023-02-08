@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"peach99cpp.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"peach99cpp.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="个人的学习笔记">
@@ -153,6 +153,123 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://peach99cpp.github.io/2023/02/08/HexoQA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/img/202302081056914.jpg">
+      <meta itemprop="name" content="久久">
+      <meta itemprop="description" content="个人的学习笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃子的笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/08/HexoQA/" class="post-title-link" itemprop="url">HexoQA</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-02-08 13:48:37 / 修改时间：14:07:37" itemprop="dateCreated datePublished" datetime="2023-02-08T13:48:37+08:00">2023-02-08</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Hexo踩坑笔记"><a href="#Hexo踩坑笔记" class="headerlink" title="Hexo踩坑笔记"></a>Hexo踩坑笔记</h1><p><a href="https://peach99cpp.github.io/">个人博客</a></p>
+<p>[TOC]</p>
+<h2 id="Hexo静态界面部署后乱版"><a href="#Hexo静态界面部署后乱版" class="headerlink" title="Hexo静态界面部署后乱版"></a>Hexo静态界面部署后乱版</h2><ul>
+<li><p>问题原因：在hexo的_ config.yml文件中URL设置出现问题</p>
+</li>
+<li><p>问题解决：</p>
+<ul>
+<li><p>查询GithubPages所分配的地址</p>
+<ul>
+<li><p>打开Github的repo，进入设置</p>
+<p><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/img/202302081353703.png" alt="界面"></p>
+<ul>
+<li><p>进入GithubPages界面查看所分配的网址</p>
+<ol>
+<li><p>若为不带后缀的 可以直接将整个网址填入URL项中<br>网址为：<br><code>https://peach99cpp.github.io/</code></p>
+<p><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/img/202302081355087.png" alt="网址界面"></p>
+</li>
+<li><p>若为带后缀的，例如<code>https://peach99cpp.github.io/peach99cpp.github.io</code>，需要再加一步设置 即设置root路径</p>
+</li>
+</ol>
+</li>
+<li><p>根据得到的路径设置URL</p>
+<ol>
+<li><p>不带后缀的，即上述第一种情况的，其config结果如下</p>
+<blockquote>
+<p><em># URL</em></p>
+<p><em>## Set your site url here. For example, if you use GitHub Page, set url as ‘<a target="_blank" rel="noopener" href="https://username.github.io/project">https://username.github.io/project</a>‘</em></p>
+<p>url: <a href="https://peach99cpp.github.io/">https://peach99cpp.github.io</a></p>
+<p>permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;</p>
+</blockquote>
+</li>
+<li><p>若为带后缀的，即上述第二种情况的，其config结果如下</p>
+</li>
+</ol>
+<blockquote>
+<p><em># URL</em></p>
+<p><em>## Set your site url here. For example, if you use GitHub Page, set url as ‘<a target="_blank" rel="noopener" href="https://username.github.io/project">https://username.github.io/project</a>‘</em></p>
+</blockquote>
+<pre><code> &gt; url: https://peach99cpp.github.io/
+ &gt;
+ &gt; root: /peach99cpp.github.io
+ &gt;
+ &gt; permalink: :year/:month/:day/:title/
+</code></pre>
+<ol start="3">
+<li>设置完成 进行上传<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo c &amp;hexo g &amp;hexo d</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>效果</p>
+<p><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/img/202302081405076.png" alt="效果"></p>
+<p>网站页面能进行正常加载</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -370,7 +487,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -381,7 +498,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -419,7 +536,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">久久</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
