@@ -6,7 +6,7 @@
   <link href="https://peach99cpp.github.io/atom.xml" rel="self"/>
   
   <link href="https://peach99cpp.github.io/"/>
-  <updated>2023-02-08T07:24:46.452Z</updated>
+  <updated>2023-02-09T08:21:27.309Z</updated>
   <id>https://peach99cpp.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>KalmanFilterNote</title>
+    <link href="https://peach99cpp.github.io/2023/02/09/KalmanFilterNote/"/>
+    <id>https://peach99cpp.github.io/2023/02/09/KalmanFilterNote/</id>
+    <published>2023-02-09T08:16:57.000Z</published>
+    <updated>2023-02-09T08:21:27.309Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;卡尔曼滤波器学习笔记&quot;&gt;&lt;a href=&quot;#卡尔曼滤波器学习笔记&quot; class=&quot;headerlink&quot; title=&quot;卡尔曼滤波器学习笔记&quot;&gt;&lt;/a&gt;卡尔曼滤波器学习笔记&lt;/h1&gt;&lt;p&gt;[toc]&lt;/p&gt;
+&lt;center&gt;&lt;u&gt;本笔记跟随华南理工大学华南虎团队相关讲解视频&lt;/u&gt;&lt;/center&gt;</summary>
+    
+    
+    
+    <category term="算法" scheme="https://peach99cpp.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="学习笔记" scheme="https://peach99cpp.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>HexoQA</title>
