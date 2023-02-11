@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/img/202302091629756.png">
 <meta property="article:published_time" content="2023-02-09T08:16:57.000Z">
-<meta property="article:modified_time" content="2023-02-09T13:46:27.498Z">
+<meta property="article:modified_time" content="2023-02-11T02:59:34.154Z">
 <meta property="article:author" content="久久">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
@@ -301,10 +301,16 @@ mjx-container[display="true"] + br {
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-02-09 16:16:57 / 修改时间：21:46:27" itemprop="dateCreated datePublished" datetime="2023-02-09T16:16:57+08:00">2023-02-09</time>
+              <time title="创建时间：2023-02-09 16:16:57" itemprop="dateCreated datePublished" datetime="2023-02-09T16:16:57+08:00">2023-02-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-02-11 10:59:34" itemprop="dateModified" datetime="2023-02-11T10:59:34+08:00">2023-02-11</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -359,8 +365,7 @@ mjx-container[display="true"] + br {
 </ul>
 </li>
 </ul>
-<h2 id="公式部分"><a href="#公式部分" class="headerlink" title="公式部分"></a>公式部分</h2><ol>
-<li><h3 id="公式理解"><a href="#公式理解" class="headerlink" title="公式理解"></a>公式理解</h3><ul>
+<h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><h3 id="公式理解"><a href="#公式理解" class="headerlink" title="公式理解"></a>公式理解</h3><ul>
 <li><p>估计值 </p>
 </li>
 <li><p>观测值</p>
@@ -372,24 +377,18 @@ mjx-container[display="true"] + br {
 P_{t}^{-}=FP_{t-1}F^{T}+Q</script><p><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.543ex;" xmlns="http://www.w3.org/2000/svg" width="10.86ex" height="2.579ex" role="img" focusable="false" viewBox="0 -900 4800 1140"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mstyle" transform="scale(1.2)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="bold" transform="scale(1,-1)" font-size="884px" font-family="serif" font-weight="bold">更</text><text data-variant="bold" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif" font-weight="bold">新</text><text data-variant="bold" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif" font-weight="bold">部</text><text data-variant="bold" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif" font-weight="bold">分</text></g></g></g></g></g></svg></mjx-container></p>
 </li>
 </ul>
-</li>
-</ol>
 <script type="math/tex; mode=display">
-   K_{t}=P_{t}^{-}H^{T}(HP_{t}^{-}H^{T}+R)^{-1}</script><script type="math/tex; mode=display">
-   \widehat{x}_{t} = \widehat{x}_{t}^{-}+K_{t}(z_{t}-H \widehat{x}_{t}^{-})</script><script type="math/tex; mode=display">
-   P_{t}=(I-K_{t}H)P_{t}^{-}</script><p>   ​      </p>
-   <center><b>输入输出分析</b></center>
+K_{t}=P_{t}^{-}H^{T}(HP_{t}^{-}H^{T}+R)^{-1}</script><script type="math/tex; mode=display">
+\widehat{x}_{t} = \widehat{x}_{t}^{-}+K_{t}(z_{t}-H \widehat{x}_{t}^{-})</script><script type="math/tex; mode=display">
+P_{t}=(I-K_{t}H)P_{t}^{-}</script><p>​      </p>
+<center><b>输入输出分析</b></center>
 
 <script type="math/tex; mode=display">
-   \widehat{x}_{t}^{-} 基于上一最优估计结果\widehat{x}_{t}</script><script type="math/tex; mode=display">
-   F、H为固定的参数矩阵</script><script type="math/tex; mode=display">
-   P_{t} 在视频中称其为 \textbf{协方差矩阵}， 其受\textbf{参数Q}影响 其会影响K_{t}</script><script type="math/tex; mode=display">
-   K_{t}  \textbf{直接}受到H、R、P_{t}的影响，\textbf{间接}受到Q的影响</script><script type="math/tex; mode=display">
-   \widehat{x}_{t} 作为输出结果 包含预测值和观测值，其中观测值的权重为K_{t} 即卡尔曼增益</script><ol>
-<li><h3 id="超参数的调节"><a href="#超参数的调节" class="headerlink" title="超参数的调节"></a>超参数的调节</h3></li>
-<li><h3 id="滤波器的使用"><a href="#滤波器的使用" class="headerlink" title="滤波器的使用"></a>滤波器的使用</h3></li>
-</ol>
-
+\widehat{x}_{t}^{-} 基于上一最优估计结果\widehat{x}_{t}</script><script type="math/tex; mode=display">
+F、H为固定的参数矩阵</script><script type="math/tex; mode=display">
+P_{t} 在视频中称其为 \textbf{协方差矩阵}， 其受\textbf{参数Q}影响 其会影响K_{t}</script><script type="math/tex; mode=display">
+K_{t}  \textbf{直接}受到H、R、P_{t}的影响，\textbf{间接}受到Q的影响</script><script type="math/tex; mode=display">
+\widehat{x}_{t} 作为输出结果 包含预测值和观测值，其中观测值的权重为K_{t} 即卡尔曼增益</script><h3 id="超参数的调节"><a href="#超参数的调节" class="headerlink" title="超参数的调节"></a>超参数的调节</h3><h3 id="滤波器的使用"><a href="#滤波器的使用" class="headerlink" title="滤波器的使用"></a>滤波器的使用</h3>
     </div>
 
     
@@ -508,7 +507,7 @@ P_{t}^{-}=FP_{t-1}F^{T}+Q</script><p><mjx-container class="MathJax" jax="SVG"><s
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-text">卡尔曼滤波器学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A5%E9%97%A8"><span class="nav-text">入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="nav-text">卡尔曼滤波器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%82%E7%94%A8%E7%9A%84%E7%B3%BB%E7%BB%9F"><span class="nav-text">适用的系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6"><span class="nav-text">进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">状态空间表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E6%96%AF%E5%88%86%E5%B8%83"><span class="nav-text">高斯分布</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F%E9%83%A8%E5%88%86"><span class="nav-text">公式部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F%E7%90%86%E8%A7%A3"><span class="nav-text">公式理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E5%8F%82%E6%95%B0%E7%9A%84%E8%B0%83%E8%8A%82"><span class="nav-text">超参数的调节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BB%A4%E6%B3%A2%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">滤波器的使用</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-text">卡尔曼滤波器学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A5%E9%97%A8"><span class="nav-text">入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="nav-text">卡尔曼滤波器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%82%E7%94%A8%E7%9A%84%E7%B3%BB%E7%BB%9F"><span class="nav-text">适用的系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6"><span class="nav-text">进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">状态空间表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E6%96%AF%E5%88%86%E5%B8%83"><span class="nav-text">高斯分布</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F"><span class="nav-text">公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F%E7%90%86%E8%A7%A3"><span class="nav-text">公式理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E5%8F%82%E6%95%B0%E7%9A%84%E8%B0%83%E8%8A%82"><span class="nav-text">超参数的调节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BB%A4%E6%B3%A2%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">滤波器的使用</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
