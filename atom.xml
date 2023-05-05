@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>桃子的笔记</title>
+  <title>久久的笔记</title>
   
-  <subtitle>简单的学习笔记</subtitle>
+  <subtitle>爱己而后爱人</subtitle>
   <link href="https://peach99cpp.github.io/atom.xml" rel="self"/>
   
   <link href="https://peach99cpp.github.io/"/>
-  <updated>2023-03-03T07:00:36.456Z</updated>
+  <updated>2023-05-05T04:30:52.156Z</updated>
   <id>https://peach99cpp.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FreeRTOS-Notes</title>
+    <link href="https://peach99cpp.github.io/2023/05/05/FreeRTOS-Notes/"/>
+    <id>https://peach99cpp.github.io/2023/05/05/FreeRTOS-Notes/</id>
+    <published>2023-05-05T04:28:12.000Z</published>
+    <updated>2023-05-05T04:30:52.156Z</updated>
+    
+    
+    
+    
+    <category term="操作系统" scheme="https://peach99cpp.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="底层" scheme="https://peach99cpp.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%BA%95%E5%B1%82/"/>
+    
+    
+    <category term="学习笔记" scheme="https://peach99cpp.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="面试" scheme="https://peach99cpp.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>华为耳机弹窗破解</title>
@@ -141,21 +162,6 @@
     <category term="Python" scheme="https://peach99cpp.github.io/tags/Python/"/>
     
     <category term="上位机" scheme="https://peach99cpp.github.io/tags/%E4%B8%8A%E4%BD%8D%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://peach99cpp.github.io/2023/01/14/hello-world/"/>
-    <id>https://peach99cpp.github.io/2023/01/14/hello-world/</id>
-    <published>2023-01-14T05:10:26.568Z</published>
-    <updated>2023-02-08T06:44:25.818Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</summary>
-    
-    
-    
     
   </entry>
   
