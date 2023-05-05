@@ -6,7 +6,7 @@
   <link href="https://peach99cpp.github.io/atom.xml" rel="self"/>
   
   <link href="https://peach99cpp.github.io/"/>
-  <updated>2023-05-05T04:30:52.156Z</updated>
+  <updated>2023-05-05T06:27:35.514Z</updated>
   <id>https://peach99cpp.github.io/</id>
   
   <author>
@@ -21,8 +21,12 @@
     <link href="https://peach99cpp.github.io/2023/05/05/FreeRTOS-Notes/"/>
     <id>https://peach99cpp.github.io/2023/05/05/FreeRTOS-Notes/</id>
     <published>2023-05-05T04:28:12.000Z</published>
-    <updated>2023-05-05T04:30:52.156Z</updated>
+    <updated>2023-05-05T06:27:35.514Z</updated>
     
+    
+    <summary type="html">&lt;h1 id=&quot;FreeRTOS学习笔记&quot;&gt;&lt;a href=&quot;#FreeRTOS学习笔记&quot; class=&quot;headerlink&quot; title=&quot;FreeRTOS学习笔记&quot;&gt;&lt;/a&gt;FreeRTOS学习笔记&lt;/h1&gt;&lt;p&gt;为了复习一遍FreeRTOS的基础知识，并对一些进阶特性进行学习了解，所以开启这篇博客。&lt;/p&gt;
+&lt;p&gt;跟随&lt;a href=&quot;https://www.bilibili.com/video/BV19g411p7UT&quot;&gt;正点原子视频教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/20230505130641.png&quot; alt=&quot;正点原子视频教程&quot;&gt;&lt;/p&gt;</summary>
     
     
     

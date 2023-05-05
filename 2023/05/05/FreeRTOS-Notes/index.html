@@ -20,19 +20,26 @@
     var CONFIG = {"hostname":"peach99cpp.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="学习笔记-用于记录自己的学习">
+  <meta name="description" content="FreeRTOS学习笔记为了复习一遍FreeRTOS的基础知识，并对一些进阶特性进行学习了解，所以开启这篇博客。 跟随正点原子视频教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FreeRTOS-Notes">
 <meta property="og:url" content="https://peach99cpp.github.io/2023/05/05/FreeRTOS-Notes/index.html">
 <meta property="og:site_name" content="久久的笔记">
-<meta property="og:description" content="学习笔记-用于记录自己的学习">
+<meta property="og:description" content="FreeRTOS学习笔记为了复习一遍FreeRTOS的基础知识，并对一些进阶特性进行学习了解，所以开启这篇博客。 跟随正点原子视频教程">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/20230505130641.png">
+<meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230505141131337.png">
+<meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230505142545871.png">
+<meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230505142506367.png">
+<meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230505135818725.png">
+<meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230505140004989.png">
 <meta property="article:published_time" content="2023-05-05T04:28:12.000Z">
-<meta property="article:modified_time" content="2023-05-05T04:30:52.156Z">
+<meta property="article:modified_time" content="2023-05-05T06:27:35.514Z">
 <meta property="article:author" content="久久">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/20230505130641.png">
 
 <link rel="canonical" href="https://peach99cpp.github.io/2023/05/05/FreeRTOS-Notes/">
 
@@ -302,7 +309,7 @@ mjx-container[display="true"] + br {
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-05-05 12:28:12 / 修改时间：12:30:52" itemprop="dateCreated datePublished" datetime="2023-05-05T12:28:12+08:00">2023-05-05</time>
+              <time title="创建时间：2023-05-05 12:28:12 / 修改时间：14:27:35" itemprop="dateCreated datePublished" datetime="2023-05-05T12:28:12+08:00">2023-05-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -329,7 +336,52 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="FreeRTOS学习笔记"><a href="#FreeRTOS学习笔记" class="headerlink" title="FreeRTOS学习笔记"></a>FreeRTOS学习笔记</h1><p>为了复习一遍FreeRTOS的基础知识，并对一些进阶特性进行学习了解，所以开启这篇博客。</p>
+<p>跟随<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19g411p7UT">正点原子视频教程</a></p>
+<p><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/20230505130641.png" alt="正点原子视频教程"></p>
+<span id="more"></span>
+<h2 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h2><h3 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h3><p><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230505141131337.png" alt="image-20230505141131337" style="zoom:50%;"></p>
+<blockquote>
+<p>config项目</p>
+<blockquote>
+<p>调度方式的配置</p>
+<p>任务计算方法的配置</p>
+<p>低功耗模式</p>
+<p>互斥、计数信号量等的使能</p>
+<p>总任务堆栈的大小</p>
+</blockquote>
+<p>可选的API函数（Include）</p>
+<blockquote>
+<p>设置、获取任务的优先级</p>
+<p>删除、挂起、恢复任务</p>
+</blockquote>
+</blockquote>
+<p><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230505142545871.png" alt="image-20230505142545871" style="zoom:80%;"></p>
+<p><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230505142506367.png" alt="image-20230505142506367" style="zoom:80%;"></p>
+<blockquote>
+<p>中断服务函数的指针</p>
+<blockquote>
+<p>PendSV </p>
+<p>SVC</p>
+</blockquote>
+</blockquote>
+<h3 id="任务状态及其转换"><a href="#任务状态及其转换" class="headerlink" title="任务状态及其转换"></a>任务状态及其转换</h3><p><strong>4种状态</strong></p>
+<p><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230505135818725.png" alt="image-20230505135818725"></p>
+<p><strong>转换关系</strong></p>
+<p><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230505140004989.png" alt="image-20230505140004989" style="zoom:80%;"></p>
+<h3 id="调度方式"><a href="#调度方式" class="headerlink" title="调度方式"></a>调度方式</h3><ol>
+<li>抢占式：指操作系统可以在任何时刻中断正在运行的任务，并将处理器分配给另一个任务。在抢占式调度中，任务的执行时间是由操作系统控制的，任务可以在任何时刻被中断和暂停。这种调度方式可以保证高优先级任务及时响应，但是需要操作系统具备一定的硬件和软件支持。</li>
+<li>协程式：指任务之间自愿地进行切换，任务可以主动释放处理器，并将控制权交给其他任务。在协程式调度中，任务之间的切换是由任务自身控制的，操作系统并不干预。这种调度方式相对于抢占式调度来说，需要更少的硬件和软件支持，但是任务响应时间可能会有所延迟。</li>
+<li>时间片式：对于优先级相同的任务，使用时间线调度方式更多，每个任务分配一个时间片用于其任务的执行</li>
+</ol>
+<p>也就是说 当高优先级的任务不进入阻塞或者挂起自身时 ，其他低优先级任务无法得到执行的机会</p>
+<p>调度器会搜索每个优先级中的任务，按优先级从高到低执行；在调度同一个优先级的任务时，采用时间片的调度方式进行。</p>
+<h3 id="中断内调用API的流程"><a href="#中断内调用API的流程" class="headerlink" title="中断内调用API的流程"></a>中断内调用API的流程</h3><h4 id="确定当前调用环境"><a href="#确定当前调用环境" class="headerlink" title="确定当前调用环境"></a>确定当前调用环境</h4><p>通过提供的接口实现对上下文环境的判断</p>
+<p>使用<code>xPortIsInsideInterrupt</code>函数来判断当前代码是否在中断上下文中被执行。这个函数返回一个布尔值，如果当前代码在中断上下文中被执行，则返回<code>pdTRUE</code>，否则返回<code>pdFALSE</code>。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (xPortIsInsideInterrupt())</span><br><span class="line">    {</span><br><span class="line">        <span class="comment">// 当前代码在中断上下文中被执行</span></span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    {</span><br><span class="line">        <span class="comment">// 当前代码在任务上下文中被执行</span></span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    }</span><br><span class="line"><span class="comment">//或者使用vPortGetIPSR，当返回值非零时 说明其在中断上下文</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="进行函数调用"><a href="#进行函数调用" class="headerlink" title="进行函数调用"></a>进行函数调用</h4><p>在中断内进行函数调用时，需要调用带有<code>FromISR</code>结尾的API</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个中断服务程序</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">ISR</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">{</span><br><span class="line">    BaseType_t xHigherPriorityTaskWoken = pdFALSE;</span><br><span class="line">    <span class="type">int</span> data = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 向队列中发送数据，如果发送成功，则会将变量xHigherPriorityTaskWoken设置为pdTRUE，以提示是否需要进行任务切换</span></span><br><span class="line">    xQueueSendFromISR(xQueue, &amp;data, &amp;xHigherPriorityTaskWoken);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果xHigherPriorityTaskWoken变量被设置为pdTRUE，则说明发送数据后需要进行任务切换</span></span><br><span class="line">    <span class="keyword">if</span> (xHigherPriorityTaskWoken == pdTRUE)</span><br><span class="line">    {</span><br><span class="line">        portYIELD_FROM_ISR();<span class="comment">//触发调度器进行任务切换</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -449,6 +501,7 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FreeRTOS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">FreeRTOS学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="nav-number">1.1.</span> <span class="nav-text">基本知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.1.</span> <span class="nav-text">基础配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E7%8A%B6%E6%80%81%E5%8F%8A%E5%85%B6%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.1.2.</span> <span class="nav-text">任务状态及其转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.3.</span> <span class="nav-text">调度方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E5%86%85%E8%B0%83%E7%94%A8API%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="nav-number">1.1.4.</span> <span class="nav-text">中断内调用API的流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AE%E5%AE%9A%E5%BD%93%E5%89%8D%E8%B0%83%E7%94%A8%E7%8E%AF%E5%A2%83"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">确定当前调用环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E8%A1%8C%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">进行函数调用</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
