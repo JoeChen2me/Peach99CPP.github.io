@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230506142553824.png">
 <meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230506122254505.png">
 <meta property="article:published_time" content="2023-05-05T04:28:12.000Z">
-<meta property="article:modified_time" content="2023-05-06T08:40:41.633Z">
+<meta property="article:modified_time" content="2023-05-06T08:51:33.020Z">
 <meta property="article:author" content="久久">
 <meta property="article:tag" content="面试">
 <meta property="article:tag" content="学习笔记">
@@ -319,7 +319,7 @@ mjx-container[display="true"] + br {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-06 16:40:41" itemprop="dateModified" datetime="2023-05-06T16:40:41+08:00">2023-05-06</time>
+                <time title="修改时间：2023-05-06 16:51:33" itemprop="dateModified" datetime="2023-05-06T16:51:33+08:00">2023-05-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -389,13 +389,14 @@ mjx-container[display="true"] + br {
 </ol>
 <p>也就是说 当高优先级的任务不进入阻塞或者挂起自身时 ，其他低优先级任务无法得到执行的机会</p>
 <p>调度器会搜索每个优先级中的任务，按优先级从高到低执行；在调度同一个优先级的任务时，采用时间片的调度方式进行。</p>
-<h3 id="中断内调用API的流程"><a href="#中断内调用API的流程" class="headerlink" title="中断内调用API的流程"></a>中断内调用API的流程</h3><h4 id="确定当前调用环境"><a href="#确定当前调用环境" class="headerlink" title="确定当前调用环境"></a>确定当前调用环境</h4><p>通过提供的接口实现对上下文环境的判断</p>
+<h3 id="中断内调用API的流程"><a href="#中断内调用API的流程" class="headerlink" title="中断内调用API的流程"></a>中断内调用API的流程</h3><p>注意：在中断用调用FreeRTOS的API函数时，该中断的优先级不能高于FreeRTOS所管理的<strong>优先级</strong>，一般默认是<u>5-15</u>，那么在<strong>中断优先级在0-4的不可以调用API函数！</strong></p>
+<h4 id="确定当前调用环境"><a href="#确定当前调用环境" class="headerlink" title="确定当前调用环境"></a>确定当前调用环境</h4><p>通过提供的接口实现对上下文环境的判断</p>
 <p>使用<code>xPortIsInsideInterrupt</code>函数来判断当前代码是否在中断上下文中被执行。这个函数返回一个布尔值，如果当前代码在中断上下文中被执行，则返回<code>pdTRUE</code>，否则返回<code>pdFALSE</code>。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (xPortIsInsideInterrupt())</span><br><span class="line">    {</span><br><span class="line">        <span class="comment">// 当前代码在中断上下文中被执行</span></span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    {</span><br><span class="line">        <span class="comment">// 当前代码在任务上下文中被执行</span></span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    }</span><br><span class="line"><span class="comment">//或者使用vPortGetIPSR，当返回值非零时 说明其在中断上下文</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h4 id="进行函数调用"><a href="#进行函数调用" class="headerlink" title="进行函数调用"></a>进行函数调用</h4><p>在中断内进行函数调用时，需要调用带有<code>FromISR</code>结尾的API</p>
 <p>同时需要根据其返回的<code>xHigherPriorityTaskWoken</code>来判断后续的操作</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个中断服务程序</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">ISR</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">{</span><br><span class="line">    BaseType_t xHigherPriorityTaskWoken = pdFALSE;</span><br><span class="line">    <span class="type">int</span> data = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 向队列中发送数据，如果发送成功，则会将变量xHigherPriorityTaskWoken设置为pdTRUE，以提示是否需要进行任务切换</span></span><br><span class="line">    xQueueSendFromISR(xQueue, &amp;data, &amp;xHigherPriorityTaskWoken);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果xHigherPriorityTaskWoken变量被设置为pdTRUE，则说明发送数据后需要进行任务切换</span></span><br><span class="line">    <span class="keyword">if</span> (xHigherPriorityTaskWoken == pdTRUE)</span><br><span class="line">    {</span><br><span class="line">        portYIELD_FROM_ISR();<span class="comment">//触发调度器进行任务切换</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<h2 id="上手使用"><a href="#上手使用" class="headerlink" title="上手使用"></a>上手使用</h2><h3 id="任务的创建和删除"><a href="#任务的创建和删除" class="headerlink" title="任务的创建和删除"></a>任务的创建和删除</h3><p>创建分为动态创建和静态创建</p>
+<h2 id="上手使用"><a href="#上手使用" class="headerlink" title="上手使用"></a>上手使用</h2><h3 id="任务的创建、删除"><a href="#任务的创建、删除" class="headerlink" title="任务的创建、删除"></a>任务的创建、删除</h3><p>创建分为动态创建和静态创建</p>
 <p><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230505151057485.png" alt="image-20230505151057485"></p>
 <ol>
 <li><p>动态创建<br>任务控制块及其栈空间由FreeRTOS分配与管理，在FreeRTOS管理的堆中分配</p>
@@ -421,7 +422,7 @@ mjx-container[display="true"] + br {
 <li>进行任务的创建 防止调度器将创建后的任务直接进行运行</li>
 <li>防止因为调度器或者中断导致代码的执行出现预期外的结果</li>
 </ol>
-
+<h3 id="FreeRTOS的中断管理"><a href="#FreeRTOS的中断管理" class="headerlink" title="FreeRTOS的中断管理"></a>FreeRTOS的中断管理</h3>
     </div>
 
     
@@ -482,7 +483,10 @@ mjx-container[display="true"] + br {
     <a href="/2023/03/03/%E5%8D%8E%E4%B8%BA%E8%80%B3%E6%9C%BA%E5%BC%B9%E7%AA%97%E7%A0%B4%E8%A7%A3/" rel="prev" title="华为耳机弹窗破解">
       <i class="fa fa-chevron-left"></i> 华为耳机弹窗破解
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2023/05/10/Torch_Chain/" rel="next" title="TorchChain">
+      TorchChain <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -541,7 +545,7 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FreeRTOS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">FreeRTOS学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="nav-number">1.1.</span> <span class="nav-text">基本知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.1.</span> <span class="nav-text">基础配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8"><span class="nav-number">1.1.2.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E7%8A%B6%E6%80%81%E5%8F%8A%E5%85%B6%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.1.3.</span> <span class="nav-text">任务状态及其转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.4.</span> <span class="nav-text">调度方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E5%86%85%E8%B0%83%E7%94%A8API%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="nav-number">1.1.5.</span> <span class="nav-text">中断内调用API的流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AE%E5%AE%9A%E5%BD%93%E5%89%8D%E8%B0%83%E7%94%A8%E7%8E%AF%E5%A2%83"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">确定当前调用环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E8%A1%8C%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">进行函数调用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E6%89%8B%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">上手使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E5%88%A0%E9%99%A4"><span class="nav-number">1.2.1.</span> <span class="nav-text">任务的创建和删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E6%8C%82%E8%B5%B7%E3%80%81%E6%81%A2%E5%A4%8D"><span class="nav-number">1.2.2.</span> <span class="nav-text">任务挂起、恢复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%B4%E7%95%8C%E5%8C%BA"><span class="nav-number">1.2.3.</span> <span class="nav-text">临界区</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FreeRTOS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">FreeRTOS学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="nav-number">1.1.</span> <span class="nav-text">基本知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.1.</span> <span class="nav-text">基础配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8"><span class="nav-number">1.1.2.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E7%8A%B6%E6%80%81%E5%8F%8A%E5%85%B6%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.1.3.</span> <span class="nav-text">任务状态及其转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.4.</span> <span class="nav-text">调度方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E5%86%85%E8%B0%83%E7%94%A8API%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="nav-number">1.1.5.</span> <span class="nav-text">中断内调用API的流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AE%E5%AE%9A%E5%BD%93%E5%89%8D%E8%B0%83%E7%94%A8%E7%8E%AF%E5%A2%83"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">确定当前调用环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E8%A1%8C%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">进行函数调用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E6%89%8B%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">上手使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E3%80%81%E5%88%A0%E9%99%A4"><span class="nav-number">1.2.1.</span> <span class="nav-text">任务的创建、删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E6%8C%82%E8%B5%B7%E3%80%81%E6%81%A2%E5%A4%8D"><span class="nav-number">1.2.2.</span> <span class="nav-text">任务挂起、恢复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%B4%E7%95%8C%E5%8C%BA"><span class="nav-number">1.2.3.</span> <span class="nav-text">临界区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FreeRTOS%E7%9A%84%E4%B8%AD%E6%96%AD%E7%AE%A1%E7%90%86"><span class="nav-number">1.2.4.</span> <span class="nav-text">FreeRTOS的中断管理</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -557,20 +561,20 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

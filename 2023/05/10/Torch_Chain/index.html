@@ -20,20 +20,25 @@
     var CONFIG = {"hostname":"peach99cpp.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Typora激活破解由于我是个白嫖怪，所以Typora也要白嫖！ 接下来是激活教程">
+  <meta name="description" content="重新学习Pytorch并在其基础上复现YOLO V1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TyporaCrack">
-<meta property="og:url" content="https://peach99cpp.github.io/2023/02/21/TyporaCrack/index.html">
+<meta property="og:title" content="TorchChain">
+<meta property="og:url" content="https://peach99cpp.github.io/2023/05/10/Torch_Chain/index.html">
 <meta property="og:site_name" content="久久的笔记">
-<meta property="og:description" content="Typora激活破解由于我是个白嫖怪，所以Typora也要白嫖！ 接下来是激活教程">
+<meta property="og:description" content="重新学习Pytorch并在其基础上复现YOLO V1">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-21T07:02:13.000Z">
-<meta property="article:modified_time" content="2023-05-06T05:21:21.516Z">
+<meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230516193755184.png">
+<meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230516195616274.png">
+<meta property="article:published_time" content="2023-05-10T04:10:09.000Z">
+<meta property="article:modified_time" content="2023-05-16T11:57:28.070Z">
 <meta property="article:author" content="久久">
-<meta property="article:tag" content="破解">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230516193755184.png">
 
-<link rel="canonical" href="https://peach99cpp.github.io/2023/02/21/TyporaCrack/">
+<link rel="canonical" href="https://peach99cpp.github.io/2023/05/10/Torch_Chain/">
 
 
 <script id="page-configurations">
@@ -46,7 +51,7 @@
   };
 </script>
 
-  <title>TyporaCrack | 久久的笔记</title>
+  <title>TorchChain | 久久的笔记</title>
   
 
 
@@ -277,7 +282,7 @@ mjx-container[display="true"] + br {
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://peach99cpp.github.io/2023/02/21/TyporaCrack/">
+    <link itemprop="mainEntityOfPage" href="https://peach99cpp.github.io/2023/05/10/Torch_Chain/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/img/202302081056914.jpg">
@@ -290,7 +295,7 @@ mjx-container[display="true"] + br {
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          TyporaCrack
+          TorchChain
         </h1>
 
         <div class="post-meta">
@@ -300,14 +305,14 @@ mjx-container[display="true"] + br {
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2023-02-21 15:02:13" itemprop="dateCreated datePublished" datetime="2023-02-21T15:02:13+08:00">2023-02-21</time>
+              <time title="创建时间：2023-05-10 12:10:09" itemprop="dateCreated datePublished" datetime="2023-05-10T12:10:09+08:00">2023-05-10</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-06 13:21:21" itemprop="dateModified" datetime="2023-05-06T13:21:21+08:00">2023-05-06</time>
+                <time title="修改时间：2023-05-16 19:57:28" itemprop="dateModified" datetime="2023-05-16T19:57:28+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -315,7 +320,11 @@ mjx-container[display="true"] + br {
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B0%8F%E4%B8%9C%E8%A5%BF/" itemprop="url" rel="index"><span itemprop="name">小东西</span></a>
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" itemprop="url" rel="index"><span itemprop="name">计算机视觉</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%8E%B0/" itemprop="url" rel="index"><span itemprop="name">项目复现</span></a>
                 </span>
             </span>
 
@@ -330,60 +339,15 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Typora激活破解"><a href="#Typora激活破解" class="headerlink" title="Typora激活破解"></a>Typora激活破解</h1><p>由于我是个<strong>白嫖怪</strong>，所以Typora也要白嫖！</p>
-<p>接下来是激活教程</p>
+        <p>重新学习<code>Pytorch</code>并在其基础上复现<code>YOLO V1</code></p>
 <span id="more"></span>
-<h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><p>最简单的方法，直接使用已有的激活码和邮箱</p>
-<blockquote>
-<p>Email: crack@example.com</p>
-</blockquote>
-<p>序列号：以下任选一个即可</p>
-<blockquote>
-<p>9CJ4WE-LSRSHE-HHAHSV-4YWYPS</p>
-<p>4VGZU7-LF9LES-4ACUFK-NFN2GA</p>
-<p>QDV87M-XFZY9T-HSNPSV-WCNCZS</p>
-</blockquote>
-<p>通过以上方法，便可以实现Typora的激活~ 简单方便还不用折腾</p>
-<hr>
-<h2 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h2><p>这个方法是通过自己在本地生成激活码来实现</p>
-<h3 id="环境需求"><a href="#环境需求" class="headerlink" title="环境需求"></a>环境需求</h3><p>git、python环境、nodejs</p>
-<h3 id="生成激活码"><a href="#生成激活码" class="headerlink" title="生成激活码"></a>生成激活码</h3><ol>
-<li><p>在cmd中输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m pip install --upgrade pip -i https://pypi.douban.com/simple</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><p>从github克隆文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Mas0nShi/typoraCracker.git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>进入上面下载的文件中的<strong>typoraCracker目录</strong>，在此路径下唤起cmd</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>解包</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python typora.py "C:\Jiu\Typora\resources\app.asar</span><br></pre></td></tr></table></figure>
-<p>其中C:\Jiu\Typora\resources\app.asar为<strong>你自己电脑上Typora安装的目录路径</strong>，需替换。</p>
-</li>
-<li><p>替换以及打包</p>
-<blockquote>
-<p>用typoraCracker目录内的 example\path\License.js替换掉dec_app\License.js文件</p>
-<p>python typora.py -u ./dec_app/ .</p>
-<p>将typoraCracker文件夹内的app.asar文件替换掉Typora\resources目录下的app.asar文件  </p>
-</blockquote>
-</li>
-<li><p>生成激活码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node ./example/keygen.js</span><br></pre></td></tr></table></figure>
-<p>执行结束后 激活码会显示在终端中，先记下来</p>
-</li>
-<li><p>激活Typora</p>
-<p>在得到了序列号之后，即可执行激活</p>
-<ol>
-<li>邮箱crack@example.com</li>
-<li>序列号就是上面所生成的</li>
-</ol>
-</li>
-<li><p>结束<br>经过这么多步骤，终于搞定了！呼~</p>
-</li>
-</ol>
+<h1 id="Pytorch部分"><a href="#Pytorch部分" class="headerlink" title="Pytorch部分"></a>Pytorch部分</h1><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="Tensor"><a href="#Tensor" class="headerlink" title="Tensor"></a>Tensor</h3><p>n维的向量<code>ndarray</code></p>
+<p><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230516193755184.png" alt="image-20230516193755184"></p>
+<h3 id="Rank-秩"><a href="#Rank-秩" class="headerlink" title="Rank 秩"></a>Rank 秩</h3><p>代表张量的轴数量，或者访问张量某一元素的索引其空间维度  </p>
+<p>张量的秩等于其shape的长度</p>
+<p>可以通过reshape操作来重塑一个tensor，但元素数量前后应保持不变。</p>
+<h3 id="例：图像数据"><a href="#例：图像数据" class="headerlink" title="例：图像数据"></a>例：图像数据</h3><p><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230516195616274.png" alt="image-20230516195616274" style="zoom: 80%;"></p>
+<p>四个轴分别代表不同的数据</p>
 
     </div>
 
@@ -432,7 +396,9 @@ mjx-container[display="true"] + br {
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%A0%B4%E8%A7%A3/" rel="tag"># 破解</a>
+              <a href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag"># 面试</a>
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
+              <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag"># 深度学习</a>
           </div>
 
         
@@ -441,13 +407,10 @@ mjx-container[display="true"] + br {
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/02/21/my-learning-post/" rel="prev" title="LearningNote PyQt">
-      <i class="fa fa-chevron-left"></i> LearningNote PyQt
+    <a href="/2023/05/05/FreeRTOS-Notes/" rel="prev" title="FreeRTOS-Notes">
+      <i class="fa fa-chevron-left"></i> FreeRTOS-Notes
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/03/03/%E5%8D%8E%E4%B8%BA%E8%80%B3%E6%9C%BA%E5%BC%B9%E7%AA%97%E7%A0%B4%E8%A7%A3/" rel="next" title="华为耳机弹窗破解">
-      华为耳机弹窗破解 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -506,7 +469,7 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Typora%E6%BF%80%E6%B4%BB%E7%A0%B4%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">Typora激活破解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">方法一：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">方法二：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E9%9C%80%E6%B1%82"><span class="nav-number">1.2.1.</span> <span class="nav-text">环境需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E6%BF%80%E6%B4%BB%E7%A0%81"><span class="nav-number">1.2.2.</span> <span class="nav-text">生成激活码</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pytorch%E9%83%A8%E5%88%86"><span class="nav-number">1.</span> <span class="nav-text">Pytorch部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tensor"><span class="nav-number">1.1.1.</span> <span class="nav-text">Tensor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rank-%E7%A7%A9"><span class="nav-number">1.1.2.</span> <span class="nav-text">Rank 秩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%EF%BC%9A%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.3.</span> <span class="nav-text">例：图像数据</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -6,7 +6,7 @@
   <link href="https://peach99cpp.github.io/atom.xml" rel="self"/>
   
   <link href="https://peach99cpp.github.io/"/>
-  <updated>2023-05-06T08:40:41.633Z</updated>
+  <updated>2023-05-16T11:57:28.070Z</updated>
   <id>https://peach99cpp.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>TorchChain</title>
+    <link href="https://peach99cpp.github.io/2023/05/10/Torch_Chain/"/>
+    <id>https://peach99cpp.github.io/2023/05/10/Torch_Chain/</id>
+    <published>2023-05-10T04:10:09.000Z</published>
+    <updated>2023-05-16T11:57:28.070Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;重新学习&lt;code&gt;Pytorch&lt;/code&gt;并在其基础上复现&lt;code&gt;YOLO V1&lt;/code&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="计算机视觉" scheme="https://peach99cpp.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    
+    <category term="项目复现" scheme="https://peach99cpp.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%8E%B0/"/>
+    
+    
+    <category term="面试" scheme="https://peach99cpp.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="学习笔记" scheme="https://peach99cpp.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="深度学习" scheme="https://peach99cpp.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>FreeRTOS-Notes</title>
     <link href="https://peach99cpp.github.io/2023/05/05/FreeRTOS-Notes/"/>
     <id>https://peach99cpp.github.io/2023/05/05/FreeRTOS-Notes/</id>
     <published>2023-05-05T04:28:12.000Z</published>
-    <updated>2023-05-06T08:40:41.633Z</updated>
+    <updated>2023-05-06T08:51:33.020Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;FreeRTOS学习笔记&quot;&gt;&lt;a href=&quot;#FreeRTOS学习笔记&quot; class=&quot;headerlink&quot; title=&quot;FreeRTOS学习笔记&quot;&gt;&lt;/a&gt;FreeRTOS学习笔记&lt;/h1&gt;&lt;p&gt;为了复习一遍FreeRTOS的基础知识，并对一些进阶特性进行学习了解，所以开启这篇博客。&lt;/p&gt;
