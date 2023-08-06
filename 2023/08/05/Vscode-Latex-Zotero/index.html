@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"peach99cpp.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="目的为自己的毕业论文、以及后续的研究生生活的论文撰写做准备      决定摆脱 Word 投入 Latex的怀抱  便开帖记录配置环境的过程 涉及的软件有：  Vscode  Latex  Zotero  主要分为两部分   如何在vscode中 优雅地使用Latex 如何结合Zotero做文献引用管理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vscode-Latex-Zotero">
+<meta property="og:url" content="https://peach99cpp.github.io/2023/08/05/Vscode-Latex-Zotero/index.html">
+<meta property="og:site_name" content="久久的笔记">
+<meta property="og:description" content="目的为自己的毕业论文、以及后续的研究生生活的论文撰写做准备      决定摆脱 Word 投入 Latex的怀抱  便开帖记录配置环境的过程 涉及的软件有：  Vscode  Latex  Zotero  主要分为两部分   如何在vscode中 优雅地使用Latex 如何结合Zotero做文献引用管理">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230805142314061.png">
+<meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230805142832777.png">
+<meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230805160033308.png">
+<meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230805160450460.png">
+<meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230805195007368.png">
+<meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230805195926805.png">
+<meta property="og:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230805200356479.png">
+<meta property="article:published_time" content="2023-08-05T06:09:09.000Z">
+<meta property="article:modified_time" content="2023-08-05T12:14:19.188Z">
+<meta property="article:author" content="久久">
+<meta property="article:tag" content="科研">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230805142314061.png">
+
+<link rel="canonical" href="https://peach99cpp.github.io/2023/08/05/Vscode-Latex-Zotero/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Vscode-Latex-Zotero | 久久的笔记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="久久的笔记" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">久久的笔记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">我爱睡觉</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/Peach99CPP" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://peach99cpp.github.io/2023/08/05/Vscode-Latex-Zotero/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/img/202302081056914.jpg">
+      <meta itemprop="name" content="久久">
+      <meta itemprop="description" content="学习笔记-用于记录自己的学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="久久的笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Vscode-Latex-Zotero
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-08-05 14:09:09 / 修改时间：20:14:19" itemprop="dateCreated datePublished" datetime="2023-08-05T14:09:09+08:00">2023-08-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">备忘录</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>为自己的毕业论文、以及后续的研究生生活的论文撰写做准备     </p>
+<p>决定摆脱 <code>Word</code> 投入 <code>Latex</code>的怀抱  便开帖记录配置环境的过程</p>
+<p>涉及的软件有：</p>
+<blockquote>
+<p>Vscode  Latex  Zotero</p>
+</blockquote>
+<p>主要分为两部分 </p>
+<ol>
+<li>如何在vscode中 <code>优雅地</code>使用Latex</li>
+<li>如何结合Zotero做文献引用管理</li>
+</ol>
+<span id="more"></span>
+<h1 id="配置过程"><a href="#配置过程" class="headerlink" title="配置过程"></a>配置过程</h1><h2 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h2><ol>
+<li><p>关于<code>vscode</code>以及<code>texLive</code>的安装，此处不再多言。特此说明。为了能够使用 <code>github copilot chat</code> ，使用的是 <code>vscode-insiders</code> 在一些配置字段上会有些许不同。仅在一些命名上指向的路径不同，后续会提及。 以下统称 <code>vscode</code> </p>
+</li>
+<li><p>在 vscode的插件市场安装  <code>latex-workshop</code>插件</p>
+<p><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230805142314061.png" alt="image-20230805142314061"></p>
+</li>
+<li><p>进入插件配置环节-（JSON版本）</p>
+<p>GUI界面太长了，因此以下采用JSON方法进行配置</p>
+<p>打开设置界面直接点击右上角的 打开设置（json）进行编译</p>
+<p><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230805142832777.png" alt="image-20230805142832777"></p>
+</li>
+<li><p>配置基本设置</p>
+<p>配置字段如下，为了方便解读部分添加了注释</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">"latex-workshop.latex.autoBuild.run"</span><span class="punctuation">:</span> <span class="string">"never"</span><span class="punctuation">,</span></span><br><span class="line">   <span class="attr">"latex-workshop.showContextMenu"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span> <span class="comment">//是否将编译文档的选项添加到右键菜单中</span></span><br><span class="line">   <span class="attr">"latex-workshop.intellisense.package.enabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span> <span class="comment">//是否启用自动补全</span></span><br><span class="line">   <span class="attr">"latex-workshop.message.error.show"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span> <span class="comment">//是否显示错误信息</span></span><br><span class="line">   <span class="attr">"latex-workshop.message.warning.show"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span> <span class="comment">//是否显示警告信息</span></span><br><span class="line">   <span class="attr">"latex-workshop.latex.tools"</span><span class="punctuation">:</span> <span class="punctuation">[</span> <span class="comment">//配置用到的编译工具</span></span><br><span class="line">       <span class="punctuation">{</span></span><br><span class="line">           <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"xelatex"</span><span class="punctuation">,</span></span><br><span class="line">           <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"xelatex"</span><span class="punctuation">,</span></span><br><span class="line">           <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">               <span class="string">"-synctex=1"</span><span class="punctuation">,</span></span><br><span class="line">               <span class="string">"-interaction=nonstopmode"</span><span class="punctuation">,</span></span><br><span class="line">               <span class="string">"-file-line-error"</span><span class="punctuation">,</span></span><br><span class="line">               <span class="string">"%DOC%"</span> <span class="comment">//这里的%DOCFile%是latex-workshop的变量，表示当前打开的tex文件的绝对路径 如果改成%DOC%则表示当前打开的tex文件的相对路径</span></span><br><span class="line">           <span class="punctuation">]</span></span><br><span class="line">       <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">       <span class="punctuation">{</span></span><br><span class="line">           <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"pdflatex"</span><span class="punctuation">,</span></span><br><span class="line">           <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"pdflatex"</span><span class="punctuation">,</span></span><br><span class="line">           <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">               <span class="string">"-synctex=1"</span><span class="punctuation">,</span></span><br><span class="line">               <span class="string">"-interaction=nonstopmode"</span><span class="punctuation">,</span></span><br><span class="line">               <span class="string">"-file-line-error"</span><span class="punctuation">,</span></span><br><span class="line">               <span class="string">"%DOC%"</span></span><br><span class="line">           <span class="punctuation">]</span></span><br><span class="line">       <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">       <span class="punctuation">{</span></span><br><span class="line">           <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"latexmk"</span><span class="punctuation">,</span></span><br><span class="line">           <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"latexmk"</span><span class="punctuation">,</span></span><br><span class="line">           <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">               <span class="string">"-synctex=1"</span><span class="punctuation">,</span></span><br><span class="line">               <span class="string">"-interaction=nonstopmode"</span><span class="punctuation">,</span></span><br><span class="line">               <span class="string">"-file-line-error"</span><span class="punctuation">,</span></span><br><span class="line">               <span class="string">"-pdf"</span><span class="punctuation">,</span></span><br><span class="line">               <span class="string">"-outdir=%OUTDIR%"</span><span class="punctuation">,</span></span><br><span class="line">               <span class="string">"%DOC%"</span></span><br><span class="line">           <span class="punctuation">]</span></span><br><span class="line">       <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">       <span class="punctuation">{</span></span><br><span class="line">           <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"bibtex"</span><span class="punctuation">,</span></span><br><span class="line">           <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"bibtex"</span><span class="punctuation">,</span></span><br><span class="line">           <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">               <span class="string">"%DOC%"</span></span><br><span class="line">           <span class="punctuation">]</span></span><br><span class="line">       <span class="punctuation">}</span></span><br><span class="line">   <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">   <span class="comment">//编译选项 通过调用之前定义的编译工具"latex-workshop.latex.tools"来编译文档</span></span><br><span class="line">   <span class="attr">"latex-workshop.latex.recipes"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">       <span class="punctuation">{</span></span><br><span class="line">           <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"XeLaTeX"</span><span class="punctuation">,</span></span><br><span class="line">           <span class="attr">"tools"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">               <span class="string">"xelatex"</span></span><br><span class="line">           <span class="punctuation">]</span></span><br><span class="line">       <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">       <span class="punctuation">{</span></span><br><span class="line">           <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"PDFLaTeX"</span><span class="punctuation">,</span></span><br><span class="line">           <span class="attr">"tools"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">               <span class="string">"pdflatex"</span></span><br><span class="line">           <span class="punctuation">]</span></span><br><span class="line">       <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">       <span class="punctuation">{</span></span><br><span class="line">           <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"BibTeX"</span><span class="punctuation">,</span></span><br><span class="line">           <span class="attr">"tools"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">               <span class="string">"bibtex"</span></span><br><span class="line">           <span class="punctuation">]</span></span><br><span class="line">       <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">       <span class="punctuation">{</span></span><br><span class="line">           <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"LaTeXmk"</span><span class="punctuation">,</span></span><br><span class="line">           <span class="attr">"tools"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">               <span class="string">"latexmk"</span></span><br><span class="line">           <span class="punctuation">]</span></span><br><span class="line">       <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">       <span class="punctuation">{</span></span><br><span class="line">           <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"xelatex -&gt; bibtex -&gt; xelatex*2"</span><span class="punctuation">,</span></span><br><span class="line">           <span class="attr">"tools"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">               <span class="string">"xelatex"</span><span class="punctuation">,</span></span><br><span class="line">               <span class="string">"bibtex"</span><span class="punctuation">,</span></span><br><span class="line">               <span class="string">"xelatex"</span><span class="punctuation">,</span></span><br><span class="line">               <span class="string">"xelatex"</span></span><br><span class="line">           <span class="punctuation">]</span></span><br><span class="line">       <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">       <span class="punctuation">{</span></span><br><span class="line">           <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"pdflatex -&gt; bibtex -&gt; pdflatex*2"</span><span class="punctuation">,</span></span><br><span class="line">           <span class="attr">"tools"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">               <span class="string">"pdflatex"</span><span class="punctuation">,</span></span><br><span class="line">               <span class="string">"bibtex"</span><span class="punctuation">,</span></span><br><span class="line">               <span class="string">"pdflatex"</span><span class="punctuation">,</span></span><br><span class="line">               <span class="string">"pdflatex"</span></span><br><span class="line">           <span class="punctuation">]</span></span><br><span class="line">       <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">   <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">   <span class="comment">//配置编译后删除的文件类型</span></span><br><span class="line">   <span class="attr">"latex-workshop.latex.clean.fileTypes"</span><span class="punctuation">:</span> <span class="punctuation">[</span> </span><br><span class="line">       <span class="string">"*.aux"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.bbl"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.blg"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.idx"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.ind"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.lof"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.lot"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.out"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.toc"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.acn"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.acr"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.alg"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.glg"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.glo"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.gls"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.ist"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.fls"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.log"</span><span class="punctuation">,</span></span><br><span class="line">       <span class="string">"*.fdb_latexmk"</span></span><br><span class="line">   <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">   <span class="attr">"latex-workshop.latex.autoClean.run"</span><span class="punctuation">:</span> <span class="string">"onFailed"</span><span class="punctuation">,</span> <span class="comment">//什么时候自动清理编译后的文件</span></span><br><span class="line">   <span class="attr">"latex-workshop.latex.recipe.default"</span><span class="punctuation">:</span> <span class="string">"lastUsed"</span><span class="punctuation">,</span></span><br><span class="line">   <span class="attr">"latex-workshop.view.pdf.internal.synctex.keybinding"</span><span class="punctuation">:</span> <span class="string">"double-click"</span> <span class="punctuation">,</span><span class="comment">//用于设置反向搜索的响应操作</span></span><br><span class="line">   <span class="comment">//<span class="doctag">TODO:</span>配置外部查看器</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用外部PDF查看器</p>
+<p>vscode内配置</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//<span class="doctag">TODO:</span>配置外部查看器</span></span><br><span class="line">    <span class="attr">"latex-workshop.view.pdf.viewer"</span><span class="punctuation">:</span> <span class="string">"external"</span><span class="punctuation">,</span><span class="comment">//设置查看器为外部查看器</span></span><br><span class="line">    <span class="attr">"latex-workshop.view.pdf.ref.viewer"</span><span class="punctuation">:</span><span class="string">"auto"</span><span class="punctuation">,</span><span class="comment">//设置引用的查看器为外部查看器</span></span><br><span class="line">    <span class="attr">"latex-workshop.view.pdf.external.viewer.command"</span><span class="punctuation">:</span> <span class="string">"C:/Users/peach/AppData/Local/SumatraPDF/SumatraPDF.exe"</span><span class="punctuation">,</span> <span class="comment">//<span class="doctag">TODO:</span> 注意修改路径</span></span><br><span class="line">    <span class="attr">"latex-workshop.view.pdf.external.viewer.args"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">"%PDF%"</span> <span class="comment">//这里的%PDF%是用于生成PDF文件的绝对路径的占位符</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"latex-workshop.view.pdf.external.synctex.command"</span><span class="punctuation">:</span> <span class="string">"C:/Users/peach/AppData/Local/SumatraPDF/SumatraPDF.exe"</span><span class="punctuation">,</span> <span class="comment">// <span class="doctag">TODO:</span>注意修改路径</span></span><br><span class="line">    <span class="attr">"latex-workshop.view.pdf.external.synctex.args"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">"-forward-search"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">"%TEX%"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">"%LINE%"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">"-reuse-instance"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">"-inverse-search"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// "\"F:/Microsoft VS Code/Code.exe\" \"F:/Microsoft VS Code/resources/app/out/cli.js\" -r -g \"%f:%l\"", //<span class="doctag">TODO:</span> 注意修改路径</span></span><br><span class="line">        <span class="string">"\"C:/Users/peach/AppData/Local/Programs/Microsoft VS Code Insiders/Code - Insiders.exe\" \"C:/Users/peach/AppData/Local/Programs/Microsoft VS Code Insiders/resources/app/out/cli.js\" -r -g \"%f:%l\""</span><span class="punctuation">,</span> <span class="comment">//<span class="doctag">TODO:</span> 注意修改路径</span></span><br><span class="line">        <span class="string">"%PDF%"</span></span><br><span class="line">        <span class="comment">//修改路径使得适配当前系统</span></span><br><span class="line">        <span class="comment">// "C:/Users/peach/AppData/Local/Programs/Microsoft VS Code Insiders/Code - Insiders.exe"</span></span><br><span class="line">        <span class="comment">// "\"C:/Users/peach/AppData/Local/Programs/Microsoft VS Code Insiders/Code - Insiders.exe\" \"C:/Users/peach/AppData/Local/Programs/Microsoft VS Code Insiders/resources/app/out/cli.js\" -r -g \"%f:%l\"", //<span class="doctag">TODO:</span> 注意修改路径</span></span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+<p>以上注释内容的详解可以参见 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/166523064">这个链接</a></p>
+</li>
+</ol>
+<p>SmartPDF软件配置</p>
+<p>需要修改SmartPDF来实现PDF反向搜索<br><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230805160033308.png" alt=""><br>将 <code>反向搜索行</code>设置为如下指令</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"C:/Users/peach/AppData/Local/Programs/Microsoft VS Code Insiders/Code - Insiders.exe"</span> <span class="string">"C:/Users/peach/AppData/Local/Programs/Microsoft VS Code Insiders/resources/app/out/cli.js"</span> --ms-enable-electron-run-as-node -gr <span class="attr">"%f"</span><span class="punctuation">:</span><span class="string">"%l"</span></span><br></pre></td></tr></table></figure>
+<p><u>注意</u>：此处的路径也需要根据系统实际进行修改<br>修改完成如下：<br><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230805160450460.png" alt="image-20230805160450460"></p>
+<h2 id="zotero"><a href="#zotero" class="headerlink" title="zotero"></a>zotero</h2><blockquote>
+<p>使用到的插件：Better BibTex for Zotero 、Zotero LaTex</p>
+</blockquote>
+<p><strong>首先</strong>，给Zotero安装Better BibTex for Zotero  插件并根据需要进行一定的设置。例如剔除所生成的BibTex中的部分内容，提高整洁程度。关于该插件的配置可参考</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/458340252">教程</a></li>
+</ul>
+<p>通过 <code>zotero-&gt;编辑-&gt;首选项-&gt;Better BibTex-&gt;Fileds</code>列出 要排除的项目名称，使用 <code>,</code>进行分割。</p>
+<p><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230805195007368.png" alt="image-20230805195007368"></p>
+<p><strong>之后</strong> ，将所需要的文献选中后点击导出条目，可以多选条目然后右键 <code>导出条目</code> 或者直接导出整个文献库</p>
+<p><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230805195926805.png" alt="image-20230805195926805"></p>
+<p>将所生成的 <code>bib</code>文件存放在Tex文件的同级目录中。</p>
+<p>假设命名为 <u>example.bib</u></p>
+<p>在Tex文件中 加入以下代码（在<code>\end{document}</code>之前，否则无效）</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\bibliography</span>{example}         <span class="comment">%参考文献数据库</span></span><br><span class="line"><span class="keyword">\bibliographystyle</span>{unsrt}      <span class="comment">%参考文献样式</span></span><br></pre></td></tr></table></figure>
+<p>之后通过 <code>\cite</code>指令便可以调出参考文献了</p>
+<p><img src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/image-20230805200356479.png" alt="image-20230805200356479"></p>
+<p><strong>最后</strong>  通过调用 </p>
+<blockquote>
+<p> <code>▷ Recipe: xelatex -&gt; bibtex -&gt; xelatex*2</code></p>
+<p>或者</p>
+<p>▷ Recipe: pdflatex -&gt; bibtex -&gt; pdflatex*2 </p>
+</blockquote>
+<p>进行编译，便可以得到带有引用及对应参考文献的文章啦。</p>
+<p>若是对参考文献样式有修改的需求，可以通过修改 <code>\bibliographystyle</code>实现</p>
+<p><strong>最后的最后</strong>，还可以通过 <code>Zotero LaTex</code>插件来快速实现插入参考文献，这是一个vscode的插件，相关教程参见<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/515335936">这个</a>。我试了但是遇到一点问题，导致没有成功插入文献，目前初步定位是bib文件和http端口问题。先骑车，晚上回来再说。</p>
+<p>参考文献</p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/coolpeach99">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://github.com/Peach99CPP">
+            <span class="icon">
+              <i class="fab fa-github-alt"></i>
+            </span>
+
+            <span class="label">Github</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%A7%91%E7%A0%94/" rel="tag"># 科研</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/07/10/unsupervised-learning-explore/" rel="prev" title="unsupervised-learning-explore">
+      <i class="fa fa-chevron-left"></i> unsupervised-learning-explore
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%AE%E7%9A%84"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">配置过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode"><span class="nav-number">2.1.</span> <span class="nav-text">vscode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zotero"><span class="nav-number">2.2.</span> <span class="nav-text">zotero</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="久久"
+      src="https://peachpidgo.oss-cn-guangzhou.aliyuncs.com/img/202302081056914.jpg">
+  <p class="site-author-name" itemprop="name">久久</p>
+  <div class="site-description" itemprop="description">学习笔记-用于记录自己的学习</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/peach99CPP" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;peach99CPP" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:coolpeach99@gmail.com" title="E-Mail → mailto:coolpeach99@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">久久</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    // window.MathJax = {
+    //   loader: {
+    //
+    //       load: ['[tex]/mhchem'],
+    //
+    //     source: {
+    //       '[tex]/amsCd': '[tex]/amscd',
+    //       '[tex]/AMScd': '[tex]/amscd'
+    //     }
+    //   },
+    //   tex: {
+    //     inlineMath: {'[+]': [['$', '$']]},
+    //
+    //       packages: {'[+]': ['mhchem']},
+    //
+    //     tags: 'ams'
+    //   },
+    //   options: {
+    //     renderActions: {
+    //       findScript: [10, doc => {
+    //         document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+    //           const display = !!node.type.match(/; *mode=display/);
+    //           const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+    //           const text = document.createTextNode('');
+    //           node.parentNode.replaceChild(text, node);
+    //           math.start = {node: text, delim: '', n: 0};
+    //           math.end = {node: text, delim: '', n: 0};
+    //           doc.math.push(math);
+    //         });
+    //       }, '', false],
+    //       insertedScript: [200, () => {
+    //         document.querySelectorAll('mjx-container').forEach(node => {
+    //           let target = node.parentNode;
+    //           if (target.nodeName.toLowerCase() === 'li') {
+    //             target.parentNode.classList.add('has-jax');
+    //           }
+    //         });
+    //       }, '', false]
+    //     }
+    //   }
+    // };
+    window.MathJax = {
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

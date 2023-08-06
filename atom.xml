@@ -6,7 +6,7 @@
   <link href="https://peach99cpp.github.io/atom.xml" rel="self"/>
   
   <link href="https://peach99cpp.github.io/"/>
-  <updated>2023-05-31T09:42:56.212Z</updated>
+  <updated>2023-08-05T12:14:19.188Z</updated>
   <id>https://peach99cpp.github.io/</id>
   
   <author>
@@ -17,11 +17,67 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Vscode-Latex-Zotero</title>
+    <link href="https://peach99cpp.github.io/2023/08/05/Vscode-Latex-Zotero/"/>
+    <id>https://peach99cpp.github.io/2023/08/05/Vscode-Latex-Zotero/</id>
+    <published>2023-08-05T06:09:09.000Z</published>
+    <updated>2023-08-05T12:14:19.188Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;目的&lt;/h1&gt;&lt;p&gt;为自己的毕业论文、以及后续的研究生生活的论文撰写做准备     &lt;/p&gt;
+&lt;p&gt;决定摆脱 &lt;code&gt;Word&lt;/code&gt; 投入 &lt;code&gt;Latex&lt;/code&gt;的怀抱  便开帖记录配置环境的过程&lt;/p&gt;
+&lt;p&gt;涉及的软件有：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Vscode  Latex  Zotero&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;主要分为两部分 &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如何在vscode中 &lt;code&gt;优雅地&lt;/code&gt;使用Latex&lt;/li&gt;
+&lt;li&gt;如何结合Zotero做文献引用管理&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="备忘录" scheme="https://peach99cpp.github.io/categories/%E5%A4%87%E5%BF%98%E5%BD%95/"/>
+    
+    
+    <category term="科研" scheme="https://peach99cpp.github.io/tags/%E7%A7%91%E7%A0%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>unsupervised-learning-explore</title>
+    <link href="https://peach99cpp.github.io/2023/07/10/unsupervised-learning-explore/"/>
+    <id>https://peach99cpp.github.io/2023/07/10/unsupervised-learning-explore/</id>
+    <published>2023-07-10T02:13:13.000Z</published>
+    <updated>2023-07-13T02:19:34.743Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;站点-航次选择&quot;&gt;&lt;a href=&quot;#站点-航次选择&quot; class=&quot;headerlink&quot; title=&quot;站点-航次选择&quot;&gt;&lt;/a&gt;站点-航次选择&lt;/h1&gt;&lt;p&gt;选择 &lt;code&gt;1146 、1148&lt;/code&gt; 和 &lt;code&gt;U1431</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://peach99cpp.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="无监督学习" scheme="https://peach99cpp.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="算法" scheme="https://peach99cpp.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>TorchChain</title>
     <link href="https://peach99cpp.github.io/2023/05/10/Torch_Chain/"/>
     <id>https://peach99cpp.github.io/2023/05/10/Torch_Chain/</id>
     <published>2023-05-10T04:10:09.000Z</published>
-    <updated>2023-05-31T09:42:56.212Z</updated>
+    <updated>2023-06-23T01:27:57.103Z</updated>
     
     
     <summary type="html">&lt;p&gt;重新学习&lt;code&gt;Pytorch&lt;/code&gt;并在其基础上复现&lt;code&gt;YOLO V1&lt;/code&gt;&lt;/p&gt;
@@ -34,9 +90,9 @@
     <category term="项目复现" scheme="https://peach99cpp.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%8E%B0/"/>
     
     
-    <category term="学习笔记" scheme="https://peach99cpp.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="面试" scheme="https://peach99cpp.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="学习笔记" scheme="https://peach99cpp.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     <category term="深度学习" scheme="https://peach99cpp.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
@@ -61,9 +117,9 @@
     <category term="底层" scheme="https://peach99cpp.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%BA%95%E5%B1%82/"/>
     
     
-    <category term="学习笔记" scheme="https://peach99cpp.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="面试" scheme="https://peach99cpp.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="学习笔记" scheme="https://peach99cpp.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
