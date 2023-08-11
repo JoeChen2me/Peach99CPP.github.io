@@ -6,7 +6,7 @@
   <link href="https://peach99cpp.github.io/atom.xml" rel="self"/>
   
   <link href="https://peach99cpp.github.io/"/>
-  <updated>2023-08-11T08:57:35.682Z</updated>
+  <updated>2023-08-11T09:14:05.112Z</updated>
   <id>https://peach99cpp.github.io/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="https://peach99cpp.github.io/2023/08/10/LA-Review/"/>
     <id>https://peach99cpp.github.io/2023/08/10/LA-Review/</id>
     <published>2023-08-10T15:48:03.000Z</published>
-    <updated>2023-08-11T08:57:35.682Z</updated>
+    <updated>2023-08-11T09:14:05.112Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;线性代数复习&quot;&gt;&lt;a href=&quot;#线性代数复习&quot; class=&quot;headerlink&quot; title=&quot;线性代数复习&quot;&gt;&lt;/a&gt;线性代数复习&lt;/h1&gt;&lt;p&gt;[TOC]&lt;/p&gt;</summary>
     
     
     
-    <category term="基础知识" scheme="https://peach99cpp.github.io/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <category term="学习笔记" scheme="https://peach99cpp.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
     <category term="复习" scheme="https://peach99cpp.github.io/tags/%E5%A4%8D%E4%B9%A0/"/>
@@ -69,7 +69,7 @@
     <link href="https://peach99cpp.github.io/2023/07/10/unsupervised-learning-explore/"/>
     <id>https://peach99cpp.github.io/2023/07/10/unsupervised-learning-explore/</id>
     <published>2023-07-10T02:13:13.000Z</published>
-    <updated>2023-07-13T02:19:34.743Z</updated>
+    <updated>2023-08-11T09:11:09.735Z</updated>
     
     
       
@@ -82,9 +82,7 @@
     
     
     
-    <category term="机器学习" scheme="https://peach99cpp.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="无监督学习" scheme="https://peach99cpp.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/"/>
+    <category term="默认分类" scheme="https://peach99cpp.github.io/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/"/>
     
     
     <category term="算法" scheme="https://peach99cpp.github.io/tags/%E7%AE%97%E6%B3%95/"/>
@@ -96,7 +94,7 @@
     <link href="https://peach99cpp.github.io/2023/05/10/Torch_Chain/"/>
     <id>https://peach99cpp.github.io/2023/05/10/Torch_Chain/</id>
     <published>2023-05-10T04:10:09.000Z</published>
-    <updated>2023-06-23T01:27:57.103Z</updated>
+    <updated>2023-08-11T09:15:04.599Z</updated>
     
     
     <summary type="html">&lt;p&gt;重新学习&lt;code&gt;Pytorch&lt;/code&gt;并在其基础上复现&lt;code&gt;YOLO V1&lt;/code&gt;&lt;/p&gt;
@@ -104,16 +102,10 @@
     
     
     
-    <category term="计算机视觉" scheme="https://peach99cpp.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
-    
-    <category term="项目复现" scheme="https://peach99cpp.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%8E%B0/"/>
+    <category term="学习笔记" scheme="https://peach99cpp.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="面试" scheme="https://peach99cpp.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-    <category term="学习笔记" scheme="https://peach99cpp.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="深度学习" scheme="https://peach99cpp.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="算法" scheme="https://peach99cpp.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -122,7 +114,7 @@
     <link href="https://peach99cpp.github.io/2023/05/05/FreeRTOS-Notes/"/>
     <id>https://peach99cpp.github.io/2023/05/05/FreeRTOS-Notes/</id>
     <published>2023-05-05T04:28:12.000Z</published>
-    <updated>2023-05-06T08:51:33.020Z</updated>
+    <updated>2023-08-11T09:13:32.155Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;FreeRTOS学习笔记&quot;&gt;&lt;a href=&quot;#FreeRTOS学习笔记&quot; class=&quot;headerlink&quot; title=&quot;FreeRTOS学习笔记&quot;&gt;&lt;/a&gt;FreeRTOS学习笔记&lt;/h1&gt;&lt;p&gt;为了复习一遍FreeRTOS的基础知识，并对一些进阶特性进行学习了解，所以开启这篇博客。&lt;/p&gt;
@@ -131,14 +123,12 @@
     
     
     
-    <category term="操作系统" scheme="https://peach99cpp.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    <category term="底层" scheme="https://peach99cpp.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%BA%95%E5%B1%82/"/>
+    <category term="学习笔记" scheme="https://peach99cpp.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="面试" scheme="https://peach99cpp.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    <category term="操作系统" scheme="https://peach99cpp.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
-    <category term="学习笔记" scheme="https://peach99cpp.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="底层" scheme="https://peach99cpp.github.io/tags/%E5%BA%95%E5%B1%82/"/>
     
   </entry>
   
@@ -147,7 +137,7 @@
     <link href="https://peach99cpp.github.io/2023/03/03/%E5%8D%8E%E4%B8%BA%E8%80%B3%E6%9C%BA%E5%BC%B9%E7%AA%97%E7%A0%B4%E8%A7%A3/"/>
     <id>https://peach99cpp.github.io/2023/03/03/%E5%8D%8E%E4%B8%BA%E8%80%B3%E6%9C%BA%E5%BC%B9%E7%AA%97%E7%A0%B4%E8%A7%A3/</id>
     <published>2023-03-03T04:58:06.000Z</published>
-    <updated>2023-03-03T07:00:36.456Z</updated>
+    <updated>2023-08-11T09:12:55.816Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;华为耳机弹窗破解&quot;&gt;&lt;a href=&quot;#华为耳机弹窗破解&quot; class=&quot;headerlink&quot; title=&quot;华为耳机弹窗破解&quot;&gt;&lt;/a&gt;华为耳机弹窗破解&lt;/h1&gt;&lt;p&gt;先上效果图&lt;/p&gt;
@@ -159,7 +149,7 @@
     <category term="破解" scheme="https://peach99cpp.github.io/categories/%E7%A0%B4%E8%A7%A3/"/>
     
     
-    <category term="分类" scheme="https://peach99cpp.github.io/tags/%E5%88%86%E7%B1%BB/"/>
+    <category term="工具" scheme="https://peach99cpp.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
@@ -188,7 +178,7 @@
     <link href="https://peach99cpp.github.io/2023/02/21/my-learning-post/"/>
     <id>https://peach99cpp.github.io/2023/02/21/my-learning-post/</id>
     <published>2023-02-21T04:31:39.138Z</published>
-    <updated>2023-02-09T11:27:25.604Z</updated>
+    <updated>2023-08-11T09:11:52.773Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;PyQt学习记录&quot;&gt;&lt;a href=&quot;#PyQt学习记录&quot; class=&quot;headerlink&quot; title=&quot;PyQt学习记录&quot;&gt;&lt;/a&gt;PyQt学习记录&lt;/h1&gt;&lt;h2 id=&quot;目标：制作一个上位机来搭配我的ESP32蓝牙设备&quot;&gt;&lt;a href=&quot;#目标：制作一个上位机来搭配我的ESP32蓝牙设备&quot; class=&quot;headerlink&quot; title=&quot;目标：制作一个上位机来搭配我的ESP32蓝牙设备&quot;&gt;&lt;/a&gt;目标：制作一个上位机来搭配我的ESP32蓝牙设备&lt;/h2&gt;</summary>
@@ -197,8 +187,6 @@
     
     <category term="软件制作" scheme="https://peach99cpp.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%88%B6%E4%BD%9C/"/>
     
-    
-    <category term="PyQt" scheme="https://peach99cpp.github.io/tags/PyQt/"/>
     
     <category term="Python" scheme="https://peach99cpp.github.io/tags/Python/"/>
     
@@ -211,7 +199,7 @@
     <link href="https://peach99cpp.github.io/2023/02/14/Alist%E6%8C%82%E8%BD%BD%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98/"/>
     <id>https://peach99cpp.github.io/2023/02/14/Alist%E6%8C%82%E8%BD%BD%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98/</id>
     <published>2023-02-14T10:07:06.000Z</published>
-    <updated>2023-02-15T04:03:26.816Z</updated>
+    <updated>2023-08-11T09:13:00.681Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;Alist挂载阿里云盘&quot;&gt;&lt;a href=&quot;#Alist挂载阿里云盘&quot; class=&quot;headerlink&quot; title=&quot;Alist挂载阿里云盘&quot;&gt;&lt;/a&gt;Alist挂载阿里云盘&lt;/h1&gt;&lt;h2 id=&quot;概览&quot;&gt;&lt;a href=&quot;#概览&quot; class=&quot;headerlink&quot; title=&quot;概览&quot;&gt;&lt;/a&gt;概览&lt;/h2&gt;&lt;p&gt;​    在2023-02-13日开始，阿里云盘官方开始封禁第三方API，导致之前主流的AList、 小白羊、蜗牛云盘等第三方播放工具都失效了。本人一开始也是使用的Alist挂载阿里云盘作为影视NAS使用，也受到了本次封禁的影响，出现了报错提示。&lt;/p&gt;
@@ -223,9 +211,7 @@
     <category term="小东西" scheme="https://peach99cpp.github.io/categories/%E5%B0%8F%E4%B8%9C%E8%A5%BF/"/>
     
     
-    <category term="影视" scheme="https://peach99cpp.github.io/tags/%E5%BD%B1%E8%A7%86/"/>
-    
-    <category term="云盘工具" scheme="https://peach99cpp.github.io/tags/%E4%BA%91%E7%9B%98%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="https://peach99cpp.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
@@ -234,7 +220,7 @@
     <link href="https://peach99cpp.github.io/2023/02/09/KalmanFilterNote/"/>
     <id>https://peach99cpp.github.io/2023/02/09/KalmanFilterNote/</id>
     <published>2023-02-09T08:16:57.000Z</published>
-    <updated>2023-02-14T03:50:08.001Z</updated>
+    <updated>2023-08-11T09:13:55.852Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;卡尔曼滤波器学习笔记&quot;&gt;&lt;a href=&quot;#卡尔曼滤波器学习笔记&quot; class=&quot;headerlink&quot; title=&quot;卡尔曼滤波器学习笔记&quot;&gt;&lt;/a&gt;卡尔曼滤波器学习笔记&lt;/h1&gt;&lt;p&gt;[toc]&lt;/p&gt;
@@ -242,10 +228,10 @@
     
     
     
-    <category term="算法" scheme="https://peach99cpp.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    <category term="学习笔记" scheme="https://peach99cpp.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="学习笔记" scheme="https://peach99cpp.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="算法" scheme="https://peach99cpp.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -254,7 +240,7 @@
     <link href="https://peach99cpp.github.io/2023/02/08/HexoNote/"/>
     <id>https://peach99cpp.github.io/2023/02/08/HexoNote/</id>
     <published>2023-02-08T05:48:37.000Z</published>
-    <updated>2023-05-05T04:14:45.504Z</updated>
+    <updated>2023-08-11T09:10:04.399Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;Hexo笔记&quot;&gt;&lt;a href=&quot;#Hexo笔记&quot; class=&quot;headerlink&quot; title=&quot;Hexo笔记&quot;&gt;&lt;/a&gt;Hexo笔记&lt;/h1&gt;&lt;p&gt;[TOC]&lt;/p&gt;
@@ -262,7 +248,7 @@
     
     
     
-    <category term="备忘" scheme="https://peach99cpp.github.io/categories/%E5%A4%87%E5%BF%98/"/>
+    <category term="备忘录" scheme="https://peach99cpp.github.io/categories/%E5%A4%87%E5%BF%98%E5%BD%95/"/>
     
     
     <category term="踩坑笔记" scheme="https://peach99cpp.github.io/tags/%E8%B8%A9%E5%9D%91%E7%AC%94%E8%AE%B0/"/>
