@@ -6,7 +6,7 @@
   <link href="https://peach99cpp.github.io/atom.xml" rel="self"/>
   
   <link href="https://peach99cpp.github.io/"/>
-  <updated>2023-08-05T12:14:19.188Z</updated>
+  <updated>2023-08-11T07:20:07.504Z</updated>
   <id>https://peach99cpp.github.io/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>LA_Review</title>
+    <link href="https://peach99cpp.github.io/2023/08/10/LA-Review/"/>
+    <id>https://peach99cpp.github.io/2023/08/10/LA-Review/</id>
+    <published>2023-08-10T15:48:03.000Z</published>
+    <updated>2023-08-11T07:20:07.504Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;线性代数复习&quot;&gt;&lt;a href=&quot;#线性代数复习&quot; class=&quot;headerlink&quot; title=&quot;线性代数复习&quot;&gt;&lt;/a&gt;线性代数复习&lt;/h1&gt;&lt;p&gt;[TOC]&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="基础知识" scheme="https://peach99cpp.github.io/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="复习" scheme="https://peach99cpp.github.io/tags/%E5%A4%8D%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Vscode-Latex-Zotero</title>
     <link href="https://peach99cpp.github.io/2023/08/05/Vscode-Latex-Zotero/"/>
     <id>https://peach99cpp.github.io/2023/08/05/Vscode-Latex-Zotero/</id>
     <published>2023-08-05T06:09:09.000Z</published>
-    <updated>2023-08-05T12:14:19.188Z</updated>
+    <updated>2023-08-06T14:50:04.178Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;目的&lt;/h1&gt;&lt;p&gt;为自己的毕业论文、以及后续的研究生生活的论文撰写做准备     &lt;/p&gt;
